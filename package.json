@@ -1,0 +1,19 @@
+{
+  "name": "ui-components",
+  "version": "1.0.0",
+  "description": "creating ui components library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romairi/UIComponents.git"
+  },
+  "author": "Roman Irinarkhov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/romairi/UIComponents/issues"
+  },
+  "homepage": "https://github.com/romairi/UIComponents#readme"
+}
