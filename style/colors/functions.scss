@@ -1,0 +1,11 @@
+@function get-primary($theme) {
+  @return map-get($theme, "primary");
+}
+
+@function get-secondary($theme) {
+  @return map-get($theme, "secondary");
+}
+
+@function get-hover($theme) {
+  @return map-get($theme, "hover");
+}

@@ -1,0 +1,33 @@
+@import '../../style/colors/colors.scss';
+@import '../../style/colors/functions.scss';
+
+.r-button {
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: white;
+  background-color: get-primary($theme);
+  border: none;
+  border-radius: 7px;
+  box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px,
+    rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: get-hover($theme);
+  }
+
+  &.small {
+    font-size: 12px;
+    padding: 8px 15px;
+  }
+
+  &.large {
+    font-size: 18px;
+    padding: 15px 24px;
+  }
+
+  &.secondary {
+      background-color: get-secondary($theme);
+  }
+}
