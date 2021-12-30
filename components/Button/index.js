@@ -1,54 +1,64 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./index.css";
+import { BUTTON_SIZES, BUTTON_TYPES, DEFAULT_SIZE } from "./constants";
+import _ from 'lodash';
+import { buildClassName } from '../../services/buildClassName';
+
+import "./index.scss";
 
 const propTypes = {
   /**
    * Is this the principal call to action on the page?
    */
   primary: PropTypes.bool,
+
   /**
-   * What background color to use
+   * The size of the button (small, medium, large).
    */
-  backgroundColor: PropTypes.string,
+  size: PropTypes.oneOf(Object.values(BUTTON_SIZES)),
+
   /**
-   * How large should the button be?
+   * Button contents.
    */
-  size: PropTypes.oneOf(["small", "medium", "large"]),
+  children: PropTypes.string.isRequired,
+
   /**
-   * Button contents
-   */
-  label: PropTypes.string.isRequired,
-  /**
-   * Optional click handler
+   * Optional click handler.
    */
   onClick: PropTypes.func,
+
+  /**
+   * The type of the button (button, reset, submit).
+   */
+  type: PropTypes.oneOf(Object.values(BUTTON_TYPES)),
+
+  /**
+   * ClassName to extend the component.
+   */
+  className: PropTypes.string,
 };
+
 const defaultProps = {
-  backgroundColor: null,
-  primary: false,
-  size: "medium",
-  onClick: undefined,
+  primary: true,
+  size: DEFAULT_SIZE,
+  type: BUTTON_TYPES.BUTTON,
+  onClick: _.noop,
 };
 
-
-/**
- * Primary UI component for user interaction
- */
-export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
-  const mode = primary
-    ? "storybook-button--primary"
-    : "storybook-button--secondary";
+const Button = ({ primary, type, size, className, onClick, children }) => {
+  const mode = primary ? '' : 'secondary'
   return (
     <button
-      type="button"
-      className={["storybook-button", `storybook-button--${size}`, mode].join(
-        " "
-      )}
-      style={backgroundColor && { backgroundColor }}
-      {...props}
+      type={type}
+      className={buildClassName([
+        "r-button",
+        className,
+        mode,
+        size !== DEFAULT_SIZE && size,
+      ])}
+      onClick={onClick}
     >
-      {label}
+      {children}
     </button>
   );
 };
@@ -56,3 +66,4 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
 Button.propTypes = propTypes;
 Button.defaultProps = defaultProps;
 
+export default Button;

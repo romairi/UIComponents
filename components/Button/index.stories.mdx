@@ -1,0 +1,82 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import Button from "./index";
+import { BUTTON_SIZES, BUTTON_TYPES } from "./constants";
+
+import "./stories.scss";
+
+<Meta
+  title="Button"
+  component={Button}
+  argTypes={{
+    size: {
+      options: Object.values(BUTTON_SIZES),
+      control: { type: "select" },
+    },
+    type: {
+      options: Object.values(BUTTON_TYPES),
+      control: { type: "select" },
+    },
+  }}
+/>
+
+export const Template = ({
+  primary,
+  type,
+  size,
+  className,
+  children = "SOME TEXT",
+}) => (
+  <Button className={className} type={type} size={size} primary={primary}>
+    {children}
+  </Button>
+);
+
+# Button
+
+This is a building block component for a button.
+
+## Default props
+
+<Canvas>
+  <Story name="default_props">{Template.bind({})}</Story>
+</Canvas>
+
+## Sizes
+
+You can select different sizes for the button. Ones should be ["small", "medium", "large"]
+
+<Canvas>
+  <Story name="sizes">
+    <div className="button_sizes">
+      {Object.entries(BUTTON_SIZES).map(([size_name, size]) => (
+        <Button key={size_name} size={size}>
+          {size_name}
+        </Button>
+      ))}
+    </div>
+  </Story>
+</Canvas>
+
+<!-- ### small
+
+<Canvas>
+  <Story name="sizes_small">
+    <Button size={BUTTON_SIZES.SMALL}>SOME TEST</Button>
+  </Story>
+</Canvas>
+
+### medium
+
+<Canvas>
+  <Story name="sizes_medium">
+    <Button size={BUTTON_SIZES.MEDIUM}>SOME TEST</Button>
+  </Story>
+</Canvas>
+
+### large
+
+<Canvas>
+  <Story name="sizes_large">
+    <Button size={BUTTON_SIZES.LARGE}>SOME TEST</Button>
+  </Story>
+</Canvas> -->

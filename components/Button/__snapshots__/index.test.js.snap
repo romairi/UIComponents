@@ -1,3 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button should render the default props 1`] = `[Function]`;
+exports[`Button should render the button with the size: LARGE 1`] = `
+<button
+  className="r-button large"
+  onClick={[Function]}
+  type="button"
+>
+  SOME TEXT
+</button>
+`;
+
+exports[`Button should render the button with the size: MEDIUM 1`] = `
+<button
+  className="r-button"
+  onClick={[Function]}
+  type="button"
+>
+  SOME TEXT
+</button>
+`;
+
+exports[`Button should render the button with the size: SMALL 1`] = `
+<button
+  className="r-button small"
+  onClick={[Function]}
+  type="button"
+>
+  SOME TEXT
+</button>
+`;
+
+exports[`Button should render the default props 1`] = `
+<button
+  className="r-button"
+  onClick={[Function]}
+  type="button"
+>
+  SOME TEXT
+</button>
+`;
