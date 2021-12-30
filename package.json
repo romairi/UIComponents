@@ -19,26 +19,37 @@
   },
   "homepage": "https://github.com/romairi/UIComponents#readme",
   "dependencies": {
+    "lodash": "^4.17.21",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-test-renderer": "^17.0.2"
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-react": "^7.16.5",
+    "@mdx-js/loader": "^1.6.22",
     "@storybook/addon-actions": "^6.4.9",
+    "@storybook/addon-controls": "^6.4.9",
+    "@storybook/addon-docs": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
     "@storybook/addon-links": "^6.4.9",
+    "@storybook/addon-postcss": "^2.0.0",
     "@storybook/react": "^6.4.9",
+    "@testing-library/react": "^12.1.2",
     "babel-jest": "^27.4.5",
     "babel-loader": "^8.2.3",
+    "css-loader": "5.2.7",
+    "html-webpack-plugin": "^5.5.0",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^27.4.5"
-  },
-  "jest": {
-    "moduleNameMapper": {
-      "\\.(css|less)$": "identity-obj-proxy"
-    }
+    "jest": "^27.4.5",
+    "mdx-loader": "^3.0.2",
+    "react-test-renderer": "^17.0.2",
+    "sass": "^1.45.1",
+    "sass-loader": "^10.1.1",
+    "style-loader": "2.0.0",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-middleware": "^5.3.0",
+    "webpack-dev-server": "^4.7.2"
   }
 }
