@@ -9,10 +9,41 @@ $boxShadowBtn: (
 $textBackgroundBtn: (rgba(74, 101, 126, 0.08));
 $outlinedBorder: (2px solid rgba(35, 120, 225, 1.5));
 
+$button_size_mapping: (
+  "small": 12px,
+  "medium": 14px,
+  "large": 18px,
+);
+
+$button_padding_list: (8px 15px);
+
+@mixin create_css_properties($name, $value, $css_properties) {
+  &.#{$name} {
+    @each $css_property in $css_properties {
+      @if $css_property == "font-size" {
+        #{$css_property}: $value;
+      } @else {
+        #{$css_property}: $button_padding_list;
+      }
+    }
+  }
+}
+
+@mixin create_size_classes($button_size_mapping) {
+  @each $size_name, $size in $button_size_mapping {
+    @include create_css_properties(
+      $size_name,
+      $size,
+      ("font-size") ("padding")
+    );
+  }
+}
+
 .r-button {
+  @include create_size_classes($button_size_mapping);
   cursor: pointer;
-  padding: 10px 20px;
   font-size: 14px;
+  padding: 10px 20px;
   color: white;
   background-color: get-primary($theme);
   border: none;
@@ -22,16 +53,6 @@ $outlinedBorder: (2px solid rgba(35, 120, 225, 1.5));
 
   &:hover {
     background-color: get-hover($theme);
-  }
-
-  &.small {
-    font-size: 12px;
-    padding: 8px 15px;
-  }
-
-  &.large {
-    font-size: 18px;
-    padding: 15px 24px;
   }
 
   &.secondary {
@@ -68,12 +89,16 @@ $outlinedBorder: (2px solid rgba(35, 120, 225, 1.5));
     border: $outlinedBorder;
     color: get-primary($theme);
     background-color: white;
-     transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease;
 
     &:hover {
       border-color: get-primary($theme);
       color: white;
       background-color: get-primary($theme);
     }
+  }
+
+   &.text &.small {
+      font-size: 12px;
   }
 }
