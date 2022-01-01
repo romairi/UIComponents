@@ -1,5 +1,11 @@
-.button_sizes {
+.button-sizes {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.button-variants {
+  display: flex;
+  justify-content: space-around;
   align-items: center;
 }

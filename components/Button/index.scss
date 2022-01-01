@@ -43,4 +43,17 @@
       background-color: get-hover-error($theme);
     }
   }
+
+  &.text {
+    color: get-hover($theme);
+    background-color: white;
+    box-shadow: none;
+    border-radius: 0;
+    transition: background-color 0.5s ease;
+
+    &:hover {
+      text-decoration: none;
+      background-color: rgba(74, 101, 126, 0.08);
+    }
+  }
 }
