@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { BUTTON_SIZES, BUTTON_TYPES, BUTTON_VARIANTS } from "./constants";
 import Button from "./index";
-import { BUTTON_SIZES, BUTTON_TYPES } from "./constants";
 
 import "./stories.scss";
 
@@ -16,6 +16,8 @@ import "./stories.scss";
       options: Object.values(BUTTON_TYPES),
       control: { type: "select" },
     },
+    variant: Object.values(BUTTON_VARIANTS),
+    control: { type: "select" },
   }}
 />
 
@@ -23,10 +25,17 @@ export const Template = ({
   primary,
   type,
   size,
+  variant,
   className,
   children = "SOME TEXT",
 }) => (
-  <Button className={className} type={type} size={size} primary={primary}>
+  <Button
+    className={className}
+    type={type}
+    size={size}
+    primary={primary}
+    variant={variant}
+  >
     {children}
   </Button>
 );
@@ -47,7 +56,7 @@ You can select different sizes for the button. Ones should be ["small", "medium"
 
 <Canvas>
   <Story name="sizes">
-    <div className="button_sizes">
+    <div className="button-sizes">
       {Object.entries(BUTTON_SIZES).map(([size_name, size]) => (
         <Button key={size_name} size={size}>
           {size_name}
@@ -57,26 +66,18 @@ You can select different sizes for the button. Ones should be ["small", "medium"
   </Story>
 </Canvas>
 
-<!-- ### small
+## Variants
+
+You can choose different variants for the button. Ones should be ["contained", "text", "outlined"]
 
 <Canvas>
-  <Story name="sizes_small">
-    <Button size={BUTTON_SIZES.SMALL}>SOME TEST</Button>
+  <Story name="variants">
+    <div className="button-variants">
+      {Object.entries(BUTTON_VARIANTS).map(([variant_name, variant]) => (
+        <Button key={variant_name} variant={variant}>
+          {variant_name}
+        </Button>
+      ))}
+    </div>
   </Story>
 </Canvas>
-
-### medium
-
-<Canvas>
-  <Story name="sizes_medium">
-    <Button size={BUTTON_SIZES.MEDIUM}>SOME TEST</Button>
-  </Story>
-</Canvas>
-
-### large
-
-<Canvas>
-  <Story name="sizes_large">
-    <Button size={BUTTON_SIZES.LARGE}>SOME TEST</Button>
-  </Story>
-</Canvas> -->
