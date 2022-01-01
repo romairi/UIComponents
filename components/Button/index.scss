@@ -1,6 +1,14 @@
 @import "../../style/colors/colors.scss";
 @import "../../style/colors/functions.scss";
 
+$boxShadowBtn: (
+  rgb(0 0 0 / 20%) 0px 3px 1px -2px,
+  rgb(0 0 0 / 14%) 0px 2px 2px 0px,
+  rgb(0 0 0 / 12%) 0px 1px 5px
+);
+$textBackgroundBtn: (rgba(74, 101, 126, 0.08));
+$outlinedBorder: (2px solid rgba(35, 120, 225, 1.5));
+
 .r-button {
   cursor: pointer;
   padding: 10px 20px;
@@ -9,8 +17,7 @@
   background-color: get-primary($theme);
   border: none;
   border-radius: 7px;
-  box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px,
-    rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px;
+  box-shadow: $boxShadowBtn;
   transition: background-color 0.3s ease;
 
   &:hover {
@@ -53,7 +60,20 @@
 
     &:hover {
       text-decoration: none;
-      background-color: rgba(74, 101, 126, 0.08);
+      background-color: $textBackgroundBtn;
+    }
+  }
+
+  &.outlined {
+    border: $outlinedBorder;
+    color: get-primary($theme);
+    background-color: white;
+     transition: background-color 0.5s ease;
+
+    &:hover {
+      border-color: get-primary($theme);
+      color: white;
+      background-color: get-primary($theme);
     }
   }
 }
