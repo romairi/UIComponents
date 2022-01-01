@@ -1,5 +1,5 @@
-@import '../../style/colors/colors.scss';
-@import '../../style/colors/functions.scss';
+@import "../../style/colors/colors.scss";
+@import "../../style/colors/functions.scss";
 
 .r-button {
   cursor: pointer;
@@ -28,6 +28,19 @@
   }
 
   &.secondary {
-      background-color: get-secondary($theme);
+    background-color: get-secondary($theme);
+    transition: background-color 0.5s ease;
+
+    &:hover {
+      background-color: get-hover-secondary($theme);
+    }
+  }
+
+  &.error {
+    background-color: get-error($theme);
+
+    &:hover {
+      background-color: get-hover-error($theme);
+    }
   }
 }
