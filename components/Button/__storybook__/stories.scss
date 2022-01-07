@@ -2,10 +2,11 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .button-variants {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
 }

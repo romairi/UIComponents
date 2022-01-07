@@ -1,23 +1,15 @@
-@function get-primary($theme) {
-  @return map-get($theme, "primary");
+@function get-primary() {
+  @return var(--primary-color);
 }
 
-@function get-secondary($theme) {
-  @return map-get($theme, "secondary");
+@function get-secondary() {
+  @return var(--secondary-color);
 }
 
-@function get-error($theme) {
-  @return map-get($theme, "error");
+@function get-hover() {
+  @return var(--hover-color);
 }
 
-@function get-hover($theme) {
-  @return map-get($theme, "hover");
-}
-
-@function get-hover-secondary($theme) {
-  @return map-get($theme, "hover-secondary");
-}
-
-@function get-hover-error($theme) {
-  @return map-get($theme, "hover-error");
+@function get-hover-secondary() {
+  @return var(--hover-secondary-color);
 }
