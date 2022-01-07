@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import Button from "./index";
-import { BUTTON_SIZES } from "./constants";
+import { BUTTON_SIZES, BUTTON_VARIANTS } from "./constants";
 import { fireEvent, render } from "@testing-library/react";
 
 describe("Button", () => {
@@ -21,7 +21,14 @@ describe("Button", () => {
     const onClick = jest.fn();
     const { container } = render(<Button onClick={onClick}>SOME TEXT</Button>);
 
-    fireEvent.click(container.firstChild);
+    fireEvent.click(container.firstChild.firstChild);
     expect(onClick).toHaveBeenCalled();
+  });
+
+  Object.values(BUTTON_VARIANTS).forEach((variant) => {
+    it(`should render the button with the variant: ${variant}`, () => {
+      const component = renderer.create(<Button variant={variant}>SOME TEXT</Button>);
+      expect(component.toJSON()).toMatchSnapshot();
+    });
   });
 });
