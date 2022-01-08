@@ -1,0 +1,17 @@
+@mixin export-theme($theme) {
+    @each $prop-name, $value in $theme {
+        --#{$prop-name}-color: #{$value};
+    }
+}
+
+@mixin create-themes($themes, $default-theme) {
+    :root {
+      @include export-theme($default-theme);
+    }
+    
+    @each $class-name, $theme in $themes {
+        .#{$class-name} {
+            @include export-theme($theme);
+        }
+    }
+}

@@ -1,0 +1,4 @@
+@import "../style/mixins/create_themes.scss";
+@import "../style/colors/colors.scss";
+
+@include create-themes($themes, $default-theme);

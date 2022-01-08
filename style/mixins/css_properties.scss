@@ -1,0 +1,7 @@
+@mixin create_css_properties($name, $css_properties) {
+    &.#{$name} {
+      @each $css_property, $value in $css_properties {
+          #{$css_property}: $value;
+      }
+    }
+  }

@@ -1,8 +1,18 @@
-$theme: (
+$default-theme: (
   "primary": #145da0,
   "secondary": #790e8b,
-  "error": #e90a14,
   "hover": #114d85,
   "hover-secondary": #d85eeb,
-  "hover-error": #ff4333,
+);
+  
+$error-theme: (
+  "primary": #e90a14,
+  "secondary": #e90a14,
+  "hover": #ff4333,
+  "hover-secondary": #ff4333,
+);
+  
+$themes: (
+    "default": $default-theme,
+    "error": $error-theme
 );

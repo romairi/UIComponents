@@ -9,8 +9,10 @@ import {
   DEFAULT_SIZE,
   DEFAULT_VARIANT,
 } from "./constants";
+import Theme from "../Theme";
 
 import "./index.scss";
+import { IsTheme } from "../Theme/themePropTypes";
 
 const propTypes = {
   /**
@@ -47,6 +49,11 @@ const propTypes = {
    * The variant to use button (contained, text, outlined).
    */
   variant: PropTypes.oneOf(Object.values(BUTTON_VARIANTS)),
+
+  /**
+   * The theme of the button.
+   */
+  theme: IsTheme,
 };
 
 const defaultProps = {
@@ -65,23 +72,26 @@ const Button = ({
   variant,
   onClick,
   children,
+  theme,
 }) => {
   const mode = primary ? "" : "secondary";
 
   return (
-    <button
-      type={type}
-      className={buildClassName([
-        "r-button",
-        className,
-        mode,
-        size !== DEFAULT_SIZE && size,
-        variant !== DEFAULT_VARIANT && variant,
-      ])}
-      onClick={onClick}
-    >
-      {children}
-    </button>
+    <Theme themeName={theme}>
+      <button
+        type={type}
+        className={buildClassName([
+          "r-button",
+          className,
+          mode,
+          size,
+          variant !== DEFAULT_VARIANT && variant,
+        ])}
+        onClick={onClick}
+      >
+        {children}
+      </button>
+    </Theme>
   );
 };
 

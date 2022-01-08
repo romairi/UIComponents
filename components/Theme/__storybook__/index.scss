@@ -1,0 +1,22 @@
+@import "../../../style/colors/functions.scss";
+
+.storybook-theme-container {
+    .storybook-theme-fields {
+        display: flex;
+
+        .storybook-theme-field {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+
+            &.primary { background-color: get-primary(); }
+            &.primary-hover { background-color: get-hover(); }
+            &.secondary { background-color: get-secondary(); }
+            &.secondary-hover { background-color: get-hover-secondary(); }
+        }
+    }
+}
