@@ -1,0 +1,21 @@
+@import "../Button/styles/constants.scss";
+
+.r-button-group {
+  display: flex;
+
+  .r-button {
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    border-right: 0;
+
+    &.start-button {
+      border-radius: $border-radius 0 0 $border-radius;
+    }
+
+    &.end-button {
+      border-right: $outlinedBorder;
+      border-radius: 0 $border-radius $border-radius 0;
+    }
+  }
+}
