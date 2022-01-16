@@ -1,0 +1,139 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import {
+  TEXT_FIELD_SIZES,
+  TEXT_FIELD_TYPES,
+  TEXT_FIELD_VARIANTS,
+} from "../constants";
+import TextField from "../index";
+// import { ThemeVariants } from "../../Theme/**storybook**/ThemeVariants.js";
+
+import "./stories.scss";
+
+
+
+<Meta
+  title="TextField"
+  component={TextField}
+  argTypes={{
+    size: {
+      options: Object.values(TEXT_FIELD_SIZES),
+      control: { type: "select" },
+    },
+    type: {
+      options: Object.values(TEXT_FIELD_TYPES),
+      control: { type: "select" },
+    },
+    variant: Object.values(TEXT_FIELD_VARIANTS),
+    control: { type: "select" },
+  }}
+/>
+
+export const Template = ({
+  id,
+  className,
+  theme,
+  size,
+  text,
+  type,
+  placeholder,
+  variant,
+  onChange,
+  required,
+  autoFocus,
+  autoComplete,
+  fullWidth,
+  error,
+}) => (
+  <TextField
+    id={id}
+    className={className}
+    type={type}
+    size={size}
+    text={text}
+    placeholder={placeholder}
+    variant={variant}
+    onChange={onChange}
+    required={required}
+    autoFocus={autoFocus}
+    autoComplete={autoComplete}
+    fullWidth={fullWidth}
+    error={error}
+  />
+);
+
+# TextField
+
+This is a building block component for a TextField.
+
+## Default props
+
+{" "}
+
+<Canvas>
+  <Story name="default_props">{Template.bind({})}</Story>
+</Canvas>
+
+## Variants ans sizes
+
+You can choose different variants for the TextField. Ones should be ["outlined", "filled", "standard"]
+
+<Canvas>
+  <Story name="variants with sizes">
+    <div className="text-field-variants">
+      {Object.entries(TEXT_FIELD_VARIANTS).map(([variant_name, variant]) => (
+        <div className="text-field-sizes">
+          {Object.entries(TEXT_FIELD_SIZES).map(([size_name, size]) => (
+            <TextField
+              key={size_name}
+              size={size}
+              variant={variant}
+              placeholder={size_name}
+              onChange={onChange}
+              required={required}
+              autoFocus={autoFocus}
+              autoComplete={autoComplete}
+              fullWidth={fullWidth}
+              error={error}
+            />
+          ))}
+        </div>
+      ))}
+    </div>
+  </Story>
+</Canvas>
+
+## Themes
+
+You can choose different variants for the TextField. Ones should be ["outlined", "filled", "standard"]
+
+<Canvas>
+  <Story name="all themes">
+    <ThemeVariants>
+      {(theme) => (
+        <div className="button-variants">
+          <h2>Theme: {theme}</h2>
+          {Object.entries(TEXT_FIELD_VARIANTS).map(
+            ([variant_name, variant]) => (
+              <div key={variant_name} className="button-sizes">
+                {Object.entries(TEXT_FIELD_SIZES).map(([size_name, size]) => (
+                  <TextField
+                    key={size_name}
+                    size={size}
+                    variant={variant}
+                    placeholder={size_name}
+                    onChange={onChange}
+                    required={required}
+                    autoFocus={autoFocus}
+                    autoComplete={autoComplete}
+                    fullWidth={fullWidth}
+                    error={error}
+                  />
+                ))}
+              </div>
+            )
+          )}
+        </div>
+      )}
+    </ThemeVariants>
+  </Story>
+</Canvas>
