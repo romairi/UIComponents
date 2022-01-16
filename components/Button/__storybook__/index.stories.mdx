@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { BUTTON_SIZES, BUTTON_TYPES, BUTTON_VARIANTS } from "../constants";
 import Button from "../index";
-import {ThemeVariants} from '../../Theme/__storybook__/ThemeVariants.js';
+import { ThemeVariants } from "../../Theme/__storybook__/ThemeVariants.js";
 
 import "./stories.scss";
 
@@ -59,18 +59,17 @@ You can choose different variants for the button. Ones should be ["contained", "
   <Story name="variants with sizes">
     <div className="button-variants">
       {Object.entries(BUTTON_VARIANTS).map(([variant_name, variant]) => (
-        <div className="button-sizes">
-            {Object.entries(BUTTON_SIZES).map(([size_name, size]) => (
-              <Button key={size_name} size={size} variant={variant}>
-                {size_name}
-              </Button>
-            ))}
-        </div> 
+        <div className="button-sizes" key={variant_name}>
+          {Object.entries(BUTTON_SIZES).map(([size_name, size]) => (
+            <Button key={size_name} size={size} variant={variant}>
+              {size_name}
+            </Button>
+          ))}
+        </div>
       ))}
     </div>
   </Story>
 </Canvas>
-
 
 ## Themes
 
@@ -79,18 +78,25 @@ You can choose different variants for the button. Ones should be ["contained", "
 <Canvas>
   <Story name="all themes">
     <ThemeVariants>
-      {theme => (<div className="button-variants">
-        <h2>Theme: {theme}</h2>
-      {Object.entries(BUTTON_VARIANTS).map(([variant_name, variant]) => (
-        <div className="button-sizes">
-            {Object.entries(BUTTON_SIZES).map(([size_name, size]) => (
-              <Button key={size_name} size={size} variant={variant} theme={theme}>
-                {size_name}
-              </Button>
-            ))}
-        </div> 
-      ))}
-    </div>)}
+      {(theme, themeId) => (
+        <div className="button-variants" key={`variant_${themeId}`}>
+          <h2>Theme: {theme}</h2>
+          {Object.entries(BUTTON_VARIANTS).map(([variant_name, variant]) => (
+            <div className="button-sizes">
+              {Object.entries(BUTTON_SIZES).map(([size_name, size]) => (
+                <Button
+                  key={size_name}
+                  size={size}
+                  variant={variant}
+                  theme={theme}
+                >
+                  {size_name}
+                </Button>
+              ))}
+            </div>
+          ))}
+        </div>
+      )}
     </ThemeVariants>
   </Story>
 </Canvas>
