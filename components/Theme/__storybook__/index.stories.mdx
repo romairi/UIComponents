@@ -3,7 +3,7 @@ import { THEMES } from "../constants";
 import Theme from "../index";
 import { ThemeVariants } from "./ThemeVariants.js";
 
-import './index.scss';
+import "./index.scss";
 
 <Meta
   title="Theme"
@@ -16,20 +16,18 @@ import './index.scss';
   }}
 />
 
-export const Template = ({
-  themeName=''
-}) => (
-  <Theme
-    themeName={themeName}
-  >
-    <div className='storybook-theme-container'>
+export const Template = ({ themeName = "", key }) => (
+  <Theme themeName={themeName} key={key}>
+    <div className="storybook-theme-container">
       <h2>{themeName}</h2>
-      <div className='storybook-theme-fields'>
-        <div className='storybook-theme-field primary'>primary</div>
-        <div className='storybook-theme-field primary-hover'>primary-hover</div>
-        <div className='storybook-theme-field secondary'>secondary</div>
-        <div className='storybook-theme-field secondary-hover'>secondary-hover</div>
-      </div> 
+      <div className="storybook-theme-fields">
+        <div className="storybook-theme-field primary">primary</div>
+        <div className="storybook-theme-field primary-hover">primary-hover</div>
+        <div className="storybook-theme-field secondary">secondary</div>
+        <div className="storybook-theme-field secondary-hover">
+          secondary-hover
+        </div>
+      </div>
     </div>
   </Theme>
 );
@@ -47,7 +45,7 @@ This is a warpper component that help us to support themes.
 <Canvas>
   <Story name="all themes">
     <ThemeVariants>
-      {(themeName) => Template({themeName})}
-    </ThemeVariants> 
+      {(themeName, themeId) => Template({ themeName, key: themeId })}
+    </ThemeVariants>
   </Story>
 </Canvas>

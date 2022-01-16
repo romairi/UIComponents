@@ -1,99 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button should render the button with the size: LARGE 1`] = `
-<div
-  className=""
+<button
+  className="r-button large"
+  onClick={[Function]}
+  type="button"
 >
-  <button
-    className="r-button large"
-    onClick={[Function]}
-    type="button"
-  >
-    SOME TEXT
-  </button>
-</div>
+  SOME TEXT
+</button>
 `;
 
 exports[`Button should render the button with the size: MEDIUM 1`] = `
-<div
-  className=""
+<button
+  className="r-button medium"
+  onClick={[Function]}
+  type="button"
 >
-  <button
-    className="r-button medium"
-    onClick={[Function]}
-    type="button"
-  >
-    SOME TEXT
-  </button>
-</div>
+  SOME TEXT
+</button>
 `;
 
 exports[`Button should render the button with the size: SMALL 1`] = `
-<div
-  className=""
+<button
+  className="r-button small"
+  onClick={[Function]}
+  type="button"
 >
-  <button
-    className="r-button small"
-    onClick={[Function]}
-    type="button"
-  >
-    SOME TEXT
-  </button>
-</div>
+  SOME TEXT
+</button>
 `;
 
 exports[`Button should render the button with the variant: contained 1`] = `
-<div
-  className=""
+<button
+  className="r-button medium"
+  onClick={[Function]}
+  type="button"
 >
-  <button
-    className="r-button medium"
-    onClick={[Function]}
-    type="button"
-  >
-    SOME TEXT
-  </button>
-</div>
+  SOME TEXT
+</button>
 `;
 
 exports[`Button should render the button with the variant: outlined 1`] = `
-<div
-  className=""
+<button
+  className="r-button medium outlined"
+  onClick={[Function]}
+  type="button"
 >
-  <button
-    className="r-button medium outlined"
-    onClick={[Function]}
-    type="button"
-  >
-    SOME TEXT
-  </button>
-</div>
+  SOME TEXT
+</button>
 `;
 
 exports[`Button should render the button with the variant: text 1`] = `
-<div
-  className=""
+<button
+  className="r-button medium text"
+  onClick={[Function]}
+  type="button"
 >
-  <button
-    className="r-button medium text"
-    onClick={[Function]}
-    type="button"
-  >
-    SOME TEXT
-  </button>
-</div>
+  SOME TEXT
+</button>
 `;
 
 exports[`Button should render the default props 1`] = `
-<div
-  className=""
+<button
+  className="r-button medium"
+  onClick={[Function]}
+  type="button"
 >
-  <button
-    className="r-button medium"
-    onClick={[Function]}
-    type="button"
-  >
-    SOME TEXT
-  </button>
-</div>
+  SOME TEXT
+</button>
 `;
