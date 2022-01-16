@@ -42,6 +42,7 @@
 
   &.outlined {
     border: $outlined-border;
+    border-color: get-primary();
     color: get-primary();
     background-color: white;
     transition: background-color 0.5s ease;
