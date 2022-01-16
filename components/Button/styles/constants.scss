@@ -1,22 +1,36 @@
-$boxShadowBtn: (
+$box-shadow-btn: (
   rgb(0 0 0 / 20%) 0px 3px 1px -2px,
   rgb(0 0 0 / 14%) 0px 2px 2px 0px,
   rgb(0 0 0 / 12%) 0px 1px 5px
 );
-$textBackgroundBtn: (rgba(74, 101, 126, 0.08));
-$outlinedBorder: (2px solid rgba(35, 120, 225, 1.5));
+$text-background-btn: (rgba(74, 101, 126, 0.08));
+$border-size: 2px;
+$outlined-border: ($border-size solid rgba(35, 120, 225, 1.5));
+$border-radius: 7px;
 
-$button_size_mapping: (
+$button-size-mapping: (
   "small": (
     "font-size": 12px,
-    "padding": 8px 15px
+    "padding": 8px 15px,
   ),
   "medium": (
     "font-size": 14px,
-    "padding": 10px 20px
+    "padding": 10px 20px,
   ),
   "large": (
     "font-size": 18px,
-    "padding": 10px 20px
+    "padding": 10px 20px,
+  ),
+);
+
+$button-outline-size-mapping: (
+  "small": (
+    "padding": 3px 8px,
+  ),
+  "medium": (
+    "padding": 6px 13px,
+  ),
+  "large": (
+    "padding": 8px 18px,
   ),
 );
