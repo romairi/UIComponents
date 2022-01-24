@@ -1,5 +1,5 @@
 # UIComponents
-The UI library provides a robust, customizable, and accessible library of components <br/>,
+The UI library provides a robust, customizable, and accessible library of components, <br/>
 enabling you to build your own design system and develop React applications faster.
 ## Quick Run
 clone the repo: git clone <name> <br/>
